@@ -1,11 +1,14 @@
+package clases;
 
 public class Habitacion {
 	public int numeroHabitacion;
 	public boolean ocupadoONO=false;
+	public double costo;
 	
-	public Habitacion (int numeroHabitacion, boolean ocupadoONO){
+	public Habitacion (int numeroHabitacion, boolean ocupadoONO, double costo){
 		this.numeroHabitacion=numeroHabitacion;
 		this.ocupadoONO=ocupadoONO;
+		this.costo=costo;
 	}
 
 	public int getNumeroHabitacion() {
@@ -22,6 +25,13 @@ public class Habitacion {
 
 	public void setOcupadoONO(boolean ocupadoONO) {
 		this.ocupadoONO = ocupadoONO;
+	}
+	public double getCosto() {
+		return costo;
+	}
+
+	public void setCosto(double costo) {
+		this.costo = costo;
 	}
 	
 	public String TranslateOcupada(){
