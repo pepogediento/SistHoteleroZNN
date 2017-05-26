@@ -29,7 +29,7 @@ public class Administrador {
 	//Metodos
 	
 	Habitacion AsiganarHabitacionAReserva(Reservas res){
-		Habitacion aux;
+		Habitacion aux=null;
 		
 		for(int i=0; i<ListaHabitaciones.size(); i++){
 			
@@ -51,9 +51,12 @@ public class Administrador {
 					ListaHabitaciones.get(i).ocupadoONO=true;
 				}
 			}
+			if(aux==null){
+				System.out.println("No se encontro ninguna habitacion del tipo solicitado disponible");
+			}
 			
 		}
-		return null;
+		return aux;
 		
 	}
 
