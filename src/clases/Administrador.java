@@ -1,11 +1,9 @@
 package clases;
-import java.util.ArrayList;
-
 import listas_array.ListaHabitacion;
 
 public class Administrador {
 
-	ListaHabitacion ListaHabitaciones;
+	ListaHabitacion ListaHab;
 	//Metodos
 	
 	//da nro de habitacion a la reserva
@@ -13,24 +11,24 @@ public class Administrador {
 	Habitacion AsiganarHabitacionAReserva(Reservas res){
 		Habitacion aux=null;
 		
-		for(int i=0; i<ListaHabitaciones.size(); i++){
+		for(int i=0; i<ListaHab.tamaño(); i++){
 			
-			if(ListaHabitaciones.obtener(i) instanceof HabitacionDoble ){
+			if(ListaHab.obtener(i) instanceof HabitacionDoble ){
 				if (res.tipoHabitacion==2){
-					aux=ListaHabitaciones.obtener(i);
-					ListaHabitaciones.get(i).setisocupadoONO=true;
+					aux=ListaHab.obtener(i);
+					ListaHab.HabitacionOcupada(i);
 				}
 			}
-			if(ListaHabitaciones.obtener(i) instanceof HabitacionTriple ){
+			if(ListaHab.obtener(i) instanceof HabitacionTriple ){
 				if (res.tipoHabitacion==3){
-					aux=ListaHabitaciones.obtener(i);
-					ListaHabitaciones.get(i).ocupadoONO=true;
+					aux=ListaHab.obtener(i);
+					ListaHab.HabitacionOcupada(i);
 				}
 			}
-			if(ListaHabitaciones.get(i) instanceof HabitacionSuite){
+			if(ListaHab.obtener(i) instanceof HabitacionSuite){
 				if (res.tipoHabitacion==1){
-					aux=ListaHabitaciones.get(i);
-					ListaHabitaciones.get(i).ocupadoONO=true;
+					aux=ListaHab.obtener(i);
+					ListaHab.HabitacionOcupada(i);
 				}
 			}
 			if(aux==null){

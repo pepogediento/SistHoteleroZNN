@@ -25,24 +25,25 @@ public class ListaHabitacion {
 		public String getArchivo() {
 			return archivo;
 		} 
-		
+		//.size
 		public int tamaño(){
 			return ListaHabitaciones.size();
 		}
-		
+		//.add
 		public void adicionar(Habitacion x){
 			ListaHabitaciones.add(x);
 		}
-		
+		//.remove
 		public void eliminar(Habitacion x){
 			ListaHabitaciones.remove(x);
 		}
-		
+		//.get
 		public Habitacion obtener(int pos){
 			return ListaHabitaciones.get(pos);
 		}
-		public Habitacion HabitacionOcupada(){
-			ListaHabitaciones.get(i).ocupadoONO=true;
+		
+		public void HabitacionOcupada(int pos){
+			ListaHabitaciones.get(pos).setOcupadoONO(true);
 		}
 		
 		public Habitacion buscar(int num){
