@@ -5,18 +5,15 @@ public class Persona {
 	public int Codigo;
 	public String Apellido;
 	public String Nombre;
-	public String Telefono;
-	public int Estado;
+	public String Telefono;	
 	
-	
-	
-	public Persona(int codigo, String apellido, String nombre, String telefono, int estado) {
+	public Persona(int codigo, String apellido, String nombre, String telefono) {
 		
 		Codigo = codigo;
 		Apellido = apellido;
 		Nombre = nombre;
 		Telefono = telefono;
-		Estado=estado;
+		
 		
 	}
 	public Persona(int codigo, String nombre) {
@@ -49,11 +46,6 @@ public class Persona {
 		Telefono = telefono;
 		
 	}
-	public int getEstado() {
-		return Estado;
-	}
-	public void setEstado(int estado) {
-		Estado = estado;
-	}
+	
 	
 }

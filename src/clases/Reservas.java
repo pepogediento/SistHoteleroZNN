@@ -1,74 +1,86 @@
 package clases;
 
 public class Reservas {
-	/// dia 
-	public int dia;
-    public int mes;
-    public int anio;
-    ///hora
-    public int hora;
-    public int minutos;
-    public Persona cliente;
-    public int nroReserva;
-    public int tipoHabitacion; /// 1 suite, 2 doble, 3 triple.
+	/// fechas 
+	public String fecha_ingreso;
+	public String fecha_salida;
+	public String fecha_reserva;
+   
+    public String cod_clie; //seria el cliente que toma la reserva, se busca en la lista mediante el codigo 
+    public int nroReserva; //seria un codigo para buscar la reserva
     
-    public Reservas(int dia, int mes, int anio, int hora, int minutos, int nroReserva, int tipoHabitacion) {
-        this.dia = dia;
-        this.mes = mes;
-        this.anio = anio;
-        this.hora = hora;
-        this.minutos = minutos;
+    public int tipoHabitacion; /// 1 suite, 2 doble, 3 triple.
+    public int numHab;
+    
+    public Reservas(String fecha_ingreso,String fecha_salida, String fecha_reserva, String cod_clie,int nroReserva, int tipoHabitacion, int numHab) {
+      
+    	this.fecha_ingreso=fecha_ingreso;
+    	this.fecha_salida=fecha_salida;
+    	this.fecha_reserva=fecha_reserva;
+    	this.cod_clie=cod_clie;
         this.nroReserva = nroReserva;
         this.tipoHabitacion=tipoHabitacion;
-        cliente=null;
+        this.numHab=numHab;
     }
 
-	public int getDia() {
-		return dia;
+
+	
+
+	public String getFecha_ingreso() {
+		return fecha_ingreso;
 	}
 
-	public void setDia(int dia) {
-		this.dia = dia;
+
+
+
+	public void setFecha_ingreso(String fecha_ingreso) {
+		this.fecha_ingreso = fecha_ingreso;
 	}
 
-	public int getMes() {
-		return mes;
+
+
+
+	public String getFecha_salida() {
+		return fecha_salida;
 	}
 
-	public void setMes(int mes) {
-		this.mes = mes;
+
+
+
+	public void setFecha_salida(String fecha_salida) {
+		this.fecha_salida = fecha_salida;
 	}
 
-	public int getAnio() {
-		return anio;
+
+
+
+	public String getFecha_reserva() {
+		return fecha_reserva;
 	}
 
-	public void setAnio(int anio) {
-		this.anio = anio;
+
+
+
+	public void setFecha_reserva(String fecha_reserva) {
+		this.fecha_reserva = fecha_reserva;
 	}
 
-	public int getHora() {
-		return hora;
+
+	public int getNumHab() {
+		return numHab;
 	}
 
-	public void setHora(int hora) {
-		this.hora = hora;
+
+	public void setNumHab(int numHab) {
+		this.numHab = numHab;
 	}
 
-	public int getMinutos() {
-		return minutos;
+	public String getCod_clie() {
+		return cod_clie;
 	}
 
-	public void setMinutos(int minutos) {
-		this.minutos = minutos;
-	}
-
-	public Persona getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Persona cliente) {
-		this.cliente = cliente;
+	public void setCod_clie(String cod_clie) {
+		this.cod_clie = cod_clie;
 	}
 
 	public int getNroReserva() {
@@ -86,6 +98,7 @@ public class Reservas {
 	public void setTipoHabitacion(int tipoHabitacion) {
 		this.tipoHabitacion = tipoHabitacion;
 	}
+	
 
 	
 	

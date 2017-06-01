@@ -87,8 +87,7 @@ public class ListaClientes {
 				linea = x.getCodigo() + ";" +
 						x.getApellido() + ";" +
 				        x.getNombre() + ";" +
-					    x.getTelefono() + ";" +
-					    x.getEstado();
+					    x.getTelefono() + ";";
 				pw.println(linea);
 			}
 			pw.close();
@@ -102,7 +101,6 @@ public class ListaClientes {
 			BufferedReader  br;
 			String          linea, s[], nombre,apellido,telefono;
 			int codigo;
-			int estado;
 			Persona cli;
 			br = new BufferedReader(new FileReader(archivo));
 			while ((linea = br.readLine()) != null) {
@@ -111,8 +109,8 @@ public class ListaClientes {
 				apellido = s[1].trim();
 				nombre = s[2].trim();
 				telefono = s[3].trim();
-				estado = Integer.parseInt(s[4].trim());				
-				cli = new Persona(codigo,apellido,nombre,telefono,estado);
+							
+				cli = new Persona(codigo,apellido,nombre,telefono);
 				adicionar(cli);
 			}
 			br.close();
