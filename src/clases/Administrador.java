@@ -8,24 +8,24 @@ public class Administrador {
 	
 	//da nro de habitacion a la reserva
 	
-	Habitacion AsiganarHabitacionAReserva(Reservas res){
+	int AsiganarHabitacionAReserva(Reservas res){
 		Habitacion aux=null;
 		
 		for(int i=0; i<ListaHab.tamaño(); i++){
 			
-			if(ListaHab.obtener(i) instanceof HabitacionDoble ){
+			if(ListaHab.obtener(i)instanceof Habitacion){
 				if (res.tipoHabitacion==2){
 					aux=ListaHab.obtener(i);
 					ListaHab.HabitacionOcupada(i);
 				}
 			}
-			if(ListaHab.obtener(i) instanceof HabitacionTriple ){
+			if(ListaHab.obtener(i) instanceof Habitacion ){
 				if (res.tipoHabitacion==3){
 					aux=ListaHab.obtener(i);
 					ListaHab.HabitacionOcupada(i);
 				}
 			}
-			if(ListaHab.obtener(i) instanceof HabitacionSuite){
+			if(ListaHab.obtener(i) instanceof Habitacion){
 				if (res.tipoHabitacion==1){
 					aux=ListaHab.obtener(i);
 					ListaHab.HabitacionOcupada(i);
@@ -36,7 +36,7 @@ public class Administrador {
 			}
 			
 		}
-		return aux;
+		return aux.numeroHabitacion;
 		
 	}
 	

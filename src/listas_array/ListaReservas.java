@@ -60,7 +60,7 @@ public class ListaReservas {
 	public Reservas Fech(String n,String m){
 		
 		for(Reservas r : res){
-			if(r.getFech_ingr().compareTo(n)==0 && r.getFech_sal().compareTo(m)==0){
+			if(r.getFecha_ingreso().compareTo(n)==0 && r.getFecha_salida().compareTo(m)==0){
 				
 				return r;
 				
@@ -79,12 +79,15 @@ public class ListaReservas {
 				x = obtener(i);
 				linea = x.getNroReserva() + ";" +
 						x.getCod_clie() + ";" +
-					    x.getNumhab() + ";" +
-					    x.getFech_reg() + ";" +
-					    x.getFech_ingr() + ";" +
-					    x.getFech_sal() + ";" +
-					    x.getEstado();
+					    x.getNumHab() + ";" +
+					    x.getTipoHabitacion() + ";" +
+					    x.getFecha_reserva() + ";" +
+					    x.getFecha_ingreso() + ";" +
+					    x.getFecha_salida();
 				pw.println(linea);
+				
+				
+				
 			}
 			pw.close();
 		}
@@ -95,24 +98,23 @@ public class ListaReservas {
 	public void cargarReserva() {
 		try {
 			BufferedReader  br;
-			String          linea, s[],codcli,fechre,fechin,fechsal,cosrecep,numhab;
-			int             codres,codcaj,estado;
-			Reserva          res;
+			String          linea, s[],codcli,fechre,fechin,fechsal;
+			int             codres, tipohab, numhab;
+			Reservas         res;
 			br = new BufferedReader(new FileReader(archivo));
 			while ((linea = br.readLine()) != null) {
 				s = linea.split(";");
 				codres = Integer.parseInt(s[0].trim());
 				codcli = s[1].trim();
-				codcaj =  Integer.parseInt(s[2].trim());	
-				cosrecep = s[3].trim();	
-				numhab = s[4].trim();	
-				fechre = s[5].trim();
-				fechin = s[6].trim();
-				fechsal = s[7].trim();
-				estado = Integer.parseInt(s[8].trim());	
+				numhab = Integer.parseInt(s[2].trim());
+				tipohab= Integer.parseInt(s[3].trim());
+				fechre = s[4].trim();
+				fechin = s[5].trim();
+				fechsal = s[6].trim();
 				
 				
-				res = new Reserva(codres,codcli,codcaj,cosrecep,numhab,fechre,fechin,fechsal,estado);
+				
+				res = new Reservas(fechin, fechsal, fechre, codcli, codres, tipohab, numhab);
 				adicionar(res);
 			}
 			br.close();
@@ -124,9 +126,9 @@ public class ListaReservas {
 
 	public int codigoMayor(int i) {
 		int codi=1000;
-		for (Reserva c: res){
-			if (c.getCod_res()>i)
-				codi=c.getCod_res();
+		for (Reservas c: res){
+			if (c.getNroReserva()>i)
+				codi=c.getNroReserva();
 		}
 		return codi;
 	}

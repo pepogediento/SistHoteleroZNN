@@ -4,11 +4,13 @@ public class Habitacion {
 	public int numeroHabitacion;
 	public boolean ocupadoONO=false;
 	public double costo;
+	public int tipoHabitacion;
 	
-	public Habitacion (int numeroHabitacion, boolean ocupadoONO, double costo){
+	public Habitacion (int numeroHabitacion, boolean ocupadoONO, double costo, int tipoHabitacion){
 		this.numeroHabitacion=numeroHabitacion;
 		this.ocupadoONO=ocupadoONO;
 		this.costo=costo;
+		this.tipoHabitacion=tipoHabitacion;
 	}
 
 	public int getNumeroHabitacion() {
@@ -34,6 +36,14 @@ public class Habitacion {
 		this.costo = costo;
 	}
 	
+	public int getTipoHabitacion() {
+		return tipoHabitacion;
+	}
+
+	public void setTipoHabitacion(int tipoHabitacion) {
+		this.tipoHabitacion = tipoHabitacion;
+	}
+
 	public String TranslateOcupada(){
 		
 		String traduccion;

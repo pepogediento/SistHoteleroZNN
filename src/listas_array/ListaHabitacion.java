@@ -6,9 +6,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import clases.Habitacion;
-import clases.HabitacionDoble;
-import clases.HabitacionSuite;
-import clases.HabitacionTriple;
+
+
 
 public class ListaHabitacion {
 
@@ -128,17 +127,17 @@ public class ListaHabitacion {
 		//cargar listas x tipo
 		public void CargarListaHabdoble(){
 			for(int i=0; i<55;i++){
-				ListaHabitaciones.add(new HabitacionDoble(i+1,false, 300));
+				ListaHabitaciones.add(new Habitacion(i+1,false, 300, 2));
 			}
 		}
 		public void CargarListaHabTriple(){
 			for(int i=56; i<91;i++){
-				ListaHabitaciones.add(new HabitacionTriple(i+1,false, 400));
+				ListaHabitaciones.add(new Habitacion(i+1,false, 400,3));
 			}
 		}
 		public void CargarListaHabSuite(){
 			for(int i=92; i<102;i++){
-				ListaHabitaciones.add(new HabitacionSuite(i+1,false, 600));
+				ListaHabitaciones.add(new Habitacion(i+1,false, 600,1));
 			}
 		}
 
